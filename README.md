@@ -13,5 +13,6 @@ step6_delete_ticket_cdata.sh
 step7_delete_ticket.sh
 step8_migrate_db_blob_to_file.sh
 
-Note: Step 8 --limit="total_rows_of_chunk_files_to_be_converted"
+Note: Step 8 --limit= is the total rows of chunk files to be converted
+      Step 8 requires Attachment on the Filesystem plugin
 ```
