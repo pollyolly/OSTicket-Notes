@@ -16,3 +16,14 @@ step8_migrate_db_blob_to_file.sh
 Note: Step 8 --limit= is the total rows of chunk files to be converted
       Step 8 requires Attachment on the Filesystem plugin
 ```
+### Add Sign In Navigation
+```
+/upload/include/class.nav.php
+Line 355: $navs['signin']=array('desc'=>__('Sign In'),'href'=>'login.php','title'=>'Sign In');
+
+/upload/login.php
+Line 149:  else {
+               $nav = new UserNav();
+               $nav->setActiveNav('signin');
+            }
+```
