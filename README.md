@@ -27,3 +27,21 @@ Line 149:  else {
                $nav->setActiveNav('signin');
             }
 ```
+### OSTicket Database
+```
+//Plugin Status
+SELECT name,isactive FROM ilcd_plugin;
+UPDATE ilcd_plugin SET isactive='0' WHERE name='LDAP Authentication and Lookup';
+//Update Base URL
+SELECT value FROM ilcd_config WHERE `id`=2;
+UPDATE ilcd_config SET value = 'http://beta.helpdesk.dilc.info' WHERE `id`=2;
+//Show Current URL
+SELECT `id`,`key`,`value` from ilcd_config WHERE `key` like '%string-char-of-existing-url%';
+```
+### Manual Uninstall a Plugin
+```
+UPDATE ilcd_plugin SET isactive='0' WHERE name='LDAP Authentication and Lookup';
+DELETE FROM ilcd_plugin where id=2;//LDAP Authentication and Lookup;
+
+rm - r /upload/include/plugins/auth-ldap.phar
+```
