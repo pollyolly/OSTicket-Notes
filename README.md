@@ -1,6 +1,6 @@
 # OSTicket-Notes
 
-### Optimizing OSTicket Database
+### Optimizing OSTicket 1.14 versions Database
 ```
 Delete closed tickets by year and Migrate all blob files in the database to filesystem
 
@@ -16,7 +16,7 @@ step8_migrate_db_blob_to_file.sh
 Note: Step 8 --limit= is the total rows of chunk files to be converted
       Step 8 requires Attachment on the Filesystem plugin
 ```
-### Add Sign In Navigation
+### Add Sign In Navigation Osticket 1.15 above
 ```
 /upload/include/class.nav.php
 Line 355: $navs['signin']=array('desc'=>__('Sign In'),'href'=>'login.php','title'=>'Sign In');
@@ -27,7 +27,7 @@ Line 149:  else {
                $nav->setActiveNav('signin');
             }
 ```
-### OSTicket Database
+### Database OSTicket 1.15 above
 ```
 //Plugin Status
 SELECT name,isactive FROM ilcd_plugin;
@@ -38,7 +38,7 @@ UPDATE ilcd_config SET value = 'http://beta.helpdesk.dilc.info' WHERE `id`=2;
 //Show Current URL
 SELECT `id`,`key`,`value` from ilcd_config WHERE `key` like '%string-char-of-existing-url%';
 ```
-### Manual Uninstall a Plugin
+### Manual Uninstall a Plugin OSticket 1.15 above
 ```
 UPDATE ilcd_plugin SET isactive='0' WHERE name='LDAP Authentication and Lookup';
 DELETE FROM ilcd_plugin where id=2;//LDAP Authentication and Lookup;
